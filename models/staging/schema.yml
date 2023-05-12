@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: ton_customers
+    database: raw-data-386422
+    schema: ton_customers
+    tables:
+      - name: customer_raw
