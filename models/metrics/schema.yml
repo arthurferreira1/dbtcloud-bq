@@ -13,3 +13,42 @@ models:
         description: "Último Estado do usuário"
       - name: cidade_do_usuario
         description: "Última cidade do usuário"
+      - name: sk_dim_user
+        description: "Surrogate key da tabela dim_users"
+
+  - name: dim_payment
+    description: "Tabela dimensão de pagamentos"
+    columns:
+      - name: codigo_da_transacao
+        description: "FK da tabela dim_payment"
+        tests: 
+          - not_null
+          - unique
+      - name: metodo_de_captura
+        description: "Jeito que é capturada o pagamento"
+      - name: bandeira_do_cartao
+        description: "Bandeira do cartão que realizou o pagamento"
+      - name: metodo_de_pagamento
+        description: "Metodo de pagamento utilizado na transação"
+      - name: estado_da_transacao
+        description: "Status da transação"
+      - name: sk_dim_payment
+        description: "Surrogate key da tabela dim_payment"
+
+  - name: fct_transactions
+    description: "Tabela fato com todas as transações realizadas"
+    columns:
+      - name: sk_dim_payment
+        description: "Surrogate key da tabela payment"
+        tests: 
+          - not_null
+          - unique
+      - name: sk_dim_user
+        description: "Surrogate key da tabela dim_user"
+      - name: data_e_hora_da_transacao
+        description: "Data e hora feita a transação"
+      - name: valor_da_transacao
+        description: "Total em reais da transação realizada"
+    
+
+  

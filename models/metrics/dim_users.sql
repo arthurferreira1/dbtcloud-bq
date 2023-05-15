@@ -16,6 +16,10 @@ WITH cte_dim_user_ranking AS (
     codigo_do_usuario
     , estado_do_usuario
     , cidade_do_usuario
+    , to_base64(md5(cast(
+      coalesce(cast(codigo_do_usuario AS STRING), '')
+      AS BYTES
+    ))) AS sk_dim_user
   FROM cte_dim_user_ranking
   WHERE ranking = 1
 )
