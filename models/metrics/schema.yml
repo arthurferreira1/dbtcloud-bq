@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "Tabela dimensão de usuários"
+    columns:
+      - name: codigo_do_usuario
+        description: "ID único do usuário"
+        tests: 
+          - not_null
+          - unique
+      - name: estado_do_usuario
+        description: "Último Estado do usuário"
+      - name: cidade_do_usuario
+        description: "Última cidade do usuário"
