@@ -28,8 +28,8 @@ models:
         description: "Jeito que é capturada o pagamento"
       - name: bandeira_do_cartao
         description: "Bandeira do cartão que realizou o pagamento"
-      - name: credit_card
-        description: "Cartão de crédito"
+      - name: metodo_de_pagamento
+        description: "Metodo de pagamento utilizado na transação"
       - name: estado_da_transacao
         description: "Status da transação"
       - name: sk_dim_payment
