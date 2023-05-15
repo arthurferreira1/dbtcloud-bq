@@ -8,7 +8,7 @@ with cte_payment AS (
     , metodo_de_pagamento
     , estado_da_transacao
     , to_base64(md5(cast(
-      coalesce(cast(codigo_da_transacao AS VARCHAR), '')
+      coalesce(cast(codigo_da_transacao AS STRING), '')
       AS BYTES
     ))) AS sk_dim_payment
   FROM {{ ref('ton_customers') }}
