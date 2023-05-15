@@ -10,7 +10,7 @@ with cte_payment AS (
     , to_base64(md5(cast(
       coalesce(cast(codigo_da_transacao AS VARCHAR), '')
       AS VARBINARY
-    )))) AS sk_dim_payment
+    ))) AS sk_dim_payment
   FROM {{ ref('ton_customers') }}
 )
 

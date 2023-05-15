@@ -19,7 +19,7 @@ WITH cte_dim_user_ranking AS (
     , to_base64(md5(cast(
       coalesce(cast(codigo_do_usuario AS VARCHAR), '')
       AS VARBINARY
-    )))) AS sk_dim_user
+    ))) AS sk_dim_user
   FROM cte_dim_user_ranking
   WHERE ranking = 1
 )
